@@ -1,0 +1,26 @@
+<%#・・・assets/stylsheets/layouts/header.css %>
+<header class='top-page-header'>
+  <div class='logo-contents'>
+   <%= link_to image_tag("crj-logo.jpg", class:"crj-icon"), "/" %>
+  </div>
+  <div class='nav'>
+    <% if user_signed_in? %>
+      <div class="user_nav">
+        <span class="user-nickname"><%= current_user.nickname %>
+          <ul class="user__info">
+            <li>
+             <%= link_to "マイページ", "/user/#{current_user.id}", class: "my-page" %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+            </li>
+          </ul>
+        </span>
+          <%= link_to "コレクションを登録/出品する", "#_path", class: "post" %>
+      </div>
+    <% else %>
+      <div class="user__login">
+        <%= link_to "ログイン", new_user_session_path, class: "login" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+      </div>
+    <% end %>
+  </div>
+</header>

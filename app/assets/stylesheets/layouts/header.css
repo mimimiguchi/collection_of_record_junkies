@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 10vw;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crj-icon {
+  width: 10vw;
+  margin-right: 10vw;
+}
+
+.nav {
+  font-size: 20px;
+}
+
+/*.user-nickname{
+  text-decoration: none;
+  margin-right: 3vw;
+  color: white;
+  font-weight: bold;
+}*/
+
+.my-page {
+  text-decoration: none;
+  color: white;
+}
+
+.logout {
+  text-decoration: none;
+  color: white;
+}
+
+.post{
+  text-decoration: none;
+  color: white;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 1vw;
+  color: white;
+}
+
+.sign-up{
+  text-decoration: none;
+  color: white;
+}
