@@ -1,0 +1,28 @@
+.main {
+  background-color: white;
+}
+
+/* 画面上部の帯部分 */
+.title-contents {
+  width: 100vw;
+  background-image: image-url('collection.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 15vw;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.service-title {
+  font-size: 8vh;
+}
+
+.service-explain {
+  font-size: 3.5vh;
+  line-height: 40px;
+}
+
+/* //画面上部の帯部分 */
