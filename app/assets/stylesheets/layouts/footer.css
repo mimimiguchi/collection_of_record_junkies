@@ -1,0 +1,16 @@
+.footer {
+  width: 100vw;
+  padding: 2vh 0;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+.crj-icon-bottom{
+  width: 20vh;
+  vertical-align: bottom;
+}
+
+.footer>p {
+  font-size: 12px;
+}
