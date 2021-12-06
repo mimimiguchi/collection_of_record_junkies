@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-end
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid. Include both letters and numbers' }
+
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is valid. Include both letters and numbers'}
   validates :nickname, presence: true
   validates :birthday, presence: true
 
@@ -18,3 +18,5 @@ end
     validates :last_name_kana
     validates :first_name_kana
   end
+
+end
