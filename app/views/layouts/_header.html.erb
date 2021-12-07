@@ -6,15 +6,13 @@
   <div class='nav'>
     <% if user_signed_in? %>
       <div class="user_nav">
-        <span class="user-nickname"><%= current_user.nickname %>
-          <ul class="user__info">
-            <li>
-             <%= link_to "マイページ", "/user/#{current_user.id}", class: "my-page" %>
-             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
-            </li>
+        <span id="lists"><%= current_user.nickname %>
+          <ul class="user__info" id="pulldown">
+            <li><%= link_to "マイページ", "/user/#{current_user.id}", class: "my-page", id: "my-page" %></li>
+            <li><%= link_to "collection投稿/出品", "#", class: "post", id: "post" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout", id: "logout" %></li>
           </ul>
         </span>
-          <%= link_to "コレクションを登録/出品する", "#_path", class: "post" %>
       </div>
     <% else %>
       <div class="user__login">

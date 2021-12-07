@@ -16,31 +16,55 @@
   margin-right: 10vw;
 }
 
-.nav {
+.user_nav span {
   font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
 
-/*.user-nickname{
-  text-decoration: none;
-  margin-right: 3vw;
-  color: white;
-  font-weight: bold;
-}*/
+.user_nav span:before {
+  content: '▼';
+  font-size: .7em;
+  margin-right: 10px;
+}
+
+.user__info {
+  display: none;
+  width: 170px;
+  height: 95px;
+  background: black;
+  position: absolute;
+  top: 75px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.user__info li{
+  border-bottom: 1px solid white;
+}
+
+.user__info li:last-child{
+  border-bottom: none;
+}
 
 .my-page {
   text-decoration: none;
   color: white;
-}
-
-.logout {
-  text-decoration: none;
-  color: white;
+  font-size: 15px;
 }
 
 .post{
   text-decoration: none;
   color: white;
+  font-size: 15px;
 }
+
+.logout {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
 
 .login {
   text-decoration: none;
