@@ -22,7 +22,7 @@ class Collection < ApplicationRecord
     validates :status_id, numericality: { other_than: 1 , message: "を選択してください。" }
   end
 
-  validates :year, format: { with: /\A\d{4}\z/ }
+  validates :year, format: { with: /(\A\d{4}\z)/ }, allow_blank: true
 
   with_options presence: true, if: :sale? do
     validates :delivery_charge_id, numericality: { other_than: 1 , message: "を選択してください。" }

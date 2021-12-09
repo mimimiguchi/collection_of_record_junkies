@@ -71,7 +71,9 @@
   outline: solid 2px black;
 }
 
-
+.sell-display {
+  /*display: none;*/
+}
 
 /* /共通 */
 
@@ -99,7 +101,6 @@
 
 
 /* 曲名とアーティスト名とリリース年と説明 */
-
 .input-collection {
   width: 70%;
   margin-top: 5px;
@@ -205,6 +206,7 @@
 
 
 .sell-btn {
+  /*display: none;*/
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
