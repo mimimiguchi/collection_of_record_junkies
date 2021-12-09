@@ -1,0 +1,235 @@
+.collections-post-contens {
+  background-color: #444444;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.collections-post-main {
+  background-color: white;
+  width: 70vw;
+  padding: 10vh 15vw;
+}
+
+.collections-post-title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 共通 */
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.free-will {
+  background: black;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+}
+
+.new-collections {
+  padding: 2vh 0;
+}
+
+.weight-bold-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.record-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-box {
+  height: 30px;
+  width: 70%;
+  background-color: white;
+  padding-left: 20px;
+  border-radius: 4px;
+}
+
+.select-box:focus {
+  outline: solid 2px black;
+}
+
+.sell-display {
+  /*display: none;*/
+}
+
+/* /共通 */
+
+/* レコード画像 */
+.image-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+}
+
+.click-upload p {
+  margin-bottom: 10px;
+}
+
+.image-field:focus {
+  outline: solid 2px black;
+}
+
+/* /レコード画像 */
+
+
+/* 曲名とアーティスト名とリリース年と説明 */
+.input-collection {
+  width: 70%;
+  margin-top: 5px;
+  height: 32px;
+  padding: 5px 8px 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 16px;
+  resize: none;
+}
+
+.input-collection:focus {
+  outline: solid 2px black;
+}
+
+.collections-text {
+  width: 100%;
+  padding: 5px 8px 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.collections-text:focus {
+  outline: solid 2px black;
+}
+
+.collections-explain {
+  margin-top: 2vh;
+}
+
+/* /曲名とアーティスト名とリリース年と説明 */
+
+
+/* 出品情報 */
+.sell-info {
+  padding: 2vh 0;
+}
+
+/* /出品情報 */
+
+/* 販売価格 */
+.sell-price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.price-content {
+  width: 300px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-text {
+  /* min-width: 170px; */
+  display: flex;
+  align-items: center;
+}
+
+.sell-yen {
+  font-size: 18px;
+}
+
+.price-input {
+  height: 30px;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+.price-input:focus {
+  outline: solid 2px black;
+}
+
+/* /販売価格 */
+
+/* 下部ボタン */
+.sell-btn-contents {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.post-btn {
+  background: black;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.post-btn:focus {
+  outline: solid 2px black;
+}
+
+
+.sell-btn {
+  /*display: none;*/
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.sell-btn:focus {
+  outline: solid 2px black;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+}
+
+.back-btn:focus {
+  outline: solid 2px black;
+}
+
+/* /下部ボタン */
