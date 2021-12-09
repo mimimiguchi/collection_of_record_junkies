@@ -31,6 +31,20 @@ ja:
         last_name_kana: "名字のフリガナ"
         first_name_kana: "名前のフリガナ"
         birthday: "生年月日"
+      collection:
+        image: "レコードのジャケット画像"
+        music_id: "ジャンル"
+        title: "曲名"
+        artist: "アーティスト名"
+        year: "リリース年"
+        description: "曲の説明"
+        size_id: "レコードサイズ"
+        rpm_id: "回転数"
+        status_id: "管理状態"
+        delivery_charge_id: "配送料の負担"
+        prefecture_id: "発送元の地域"
+        delivery_day_id: "発送までの日数"
+        price: "販売価格"
     models:
       user: "ユーザ"
   devise:
