@@ -2,6 +2,16 @@ class Collection < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :music
+  belongs_to :size
+  belongs_to :rpm
+  belongs_to :status
+  belongs_to :delivery_charge
+  belongs_to :prefecture
+  belongs_to :delivery_day
+
+
   with_options presence: true do
     validates :image
     validates :music_id, numericality: { other_than: 1 , message: "を選択してください。" }
@@ -11,6 +21,8 @@ class Collection < ApplicationRecord
     validates :rpm_id, numericality: { other_than: 1 , message: "を選択してください。" }
     validates :status_id, numericality: { other_than: 1 , message: "を選択してください。" }
   end
+
+  validates :year, format: { with: /\A\d{4}\z/ }
 
   with_options presence: true, if: :sale? do
     validates :delivery_charge_id, numericality: { other_than: 1 , message: "を選択してください。" }

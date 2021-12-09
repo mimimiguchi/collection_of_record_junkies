@@ -41,15 +41,37 @@
 
 .weight-bold-text {
   font-weight: bold;
+}
+
+.new-collections {
+  padding: 2vh 0;
+}
+
+.weight-bold-title {
+  font-weight: bold;
   margin-bottom: 10px;
+}
+
+.record-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .select-box {
   height: 30px;
-  width: 100%;
+  width: 70%;
   background-color: white;
   padding-left: 20px;
+  border-radius: 4px;
 }
+
+.select-box:focus {
+  outline: solid 2px black;
+}
+
+
 
 /* /共通 */
 
@@ -75,45 +97,8 @@
 
 /* /レコード画像 */
 
-/* 音楽のジャンル */
-/* collectionの詳細と共通 */
-.collections-detail {
-  display: flex;
-  justify-content: space-between;
-  padding: 2vh 0;
-}
-
-.collections-detail .form {
-  width: 300px;
-  padding: 2vh 0;
-}
-
-.select-box {
-  margin: 2vh 0;
-}
-
-.select-box:focus {
-  outline: solid 2px black;
-}
-
-/* /音楽のジャンル */
-/* /collectionの詳細と共通 */
 
 /* 曲名とアーティスト名とリリース年と説明 */
-.weight-bold-collections-text {
-  font-weight: bold;
-}
-
-.new-collections {
-  padding: 2vh 0;
-}
-
-.record-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
 
 .input-collection {
   width: 70%;
@@ -150,6 +135,13 @@
 
 /* /曲名とアーティスト名とリリース年と説明 */
 
+
+/* 出品情報 */
+.sell-info {
+  padding: 2vh 0;
+}
+
+/* /出品情報 */
 
 /* 販売価格 */
 .sell-price {
@@ -196,6 +188,21 @@
   text-align: center;
   margin-top: 30px;
 }
+
+.post-btn {
+  background: black;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.post-btn:focus {
+  outline: solid 2px black;
+}
+
 
 .sell-btn {
   background: #ea352d;

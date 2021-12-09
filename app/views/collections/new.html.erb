@@ -23,28 +23,23 @@
     </div>
     <%# /レコード画像 %>
 
-    <%# 音楽のジャンル %>
-    <div class="collections-detail">
-      <div class="form">
-        <div class="weight-bold-text">ジャンル
-          <span class="indispensable">必須</span>
-        </div>
-        <% f.collection_select(:genre_id, [], :id, :name, {}, {class:"select-box", id:"collection-genre"}) %>
-      </div>
-    </div>
-    <%# /音楽のジャンル %>
-
-    <%# 曲名とアーティスト名とリリース年と説明%>
+    <%# ジャンルと曲名とアーティスト名とリリース年と説明%>
     <div class="new-collections">
       <div class="record-info">
-        <div class="weight-bold-collections-text">
+      <div class="weight-bold-text">ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:music_id, Music.all, :id, :name, {}, {class:"select-box", id:"collection-music"}) %>
+      </div>
+      <div class="record-info">
+        <div class="weight-bold-text">
           曲名
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :title, class:"input-collection", id:"collection-title", placeholder:"曲名（必須 40文字まで)", maxlength:"40" %>
       </div>
       <div class="record-info">
-        <div class="weight-bold-collections-text">
+        <div class="weight-bold-text">
           アーティスト名
           <span class="indispensable">必須</span>
         </div>
@@ -55,7 +50,7 @@
           リリース年
           <span class="free-will">任意</span>
         </div>
-        <%= f.text_area :year, class:"input-collection", id:"collection-year", placeholder:"リリース年（任意 半角数字4文字まで)", maxlength:"4" %>
+        <%= f.text_area :year, class:"input-collection", id:"collection-year", placeholder:"例) 1995（任意 半角数字4文字まで)", maxlength:"4" %>
       </div>
       <div class="collections-explain">
         <div class="weight-bold-text">
@@ -65,56 +60,61 @@
         <%= f.text_area :description, class:"collections-text", id:"collection-info", placeholder:"曲の説明やご自身の思い出等、自由にご入力ください（任意 1000文字まで)", rows:"7", maxlength:"1000" %>
       </div>
     </div>
-    <%# /曲名とアーティスト名とリリース年と説明%>
+    <%# /ジャンルと曲名とアーティスト名とリリース年と説明%>
+    
+    
 
     <%# collectionの詳細 %>
-    <div class="collections-detail">
-      <div class="weight-bold-text">collectionの詳細</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          レコードサイズ
+    <div class="new-collections">
+      <div class="weight-bold-title">■collectionの詳細</div>
+      <div class="record-info">
+      <div class="weight-bold-text">レコードサイズ
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:size_id, [], :id, :name, {}, {class:"select-box", id:"collection-size"}) %>
-        <div class="weight-bold-text">
-          回転数
+        <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"collection-size"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">回転数
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:rpm_id, [], :id, :name, {}, {class:"select-box", id:"collection-rpm"}) %>
-        <div class="weight-bold-text">
-          管理状態
+        <%= f.collection_select(:rpm_id, Rpm.all, :id, :name, {}, {class:"select-box", id:"collection-rpm"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">管理状態
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:status_id, [], :id, :name, {}, {class:"select-box", id:"collection-status"}) %>
-      </div>  
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"collection-status"}) %>
+      </div>
     </div>
     <%# collectionの詳細 %>
 
     <%# 出品情報 %>
     <div class="sell-info">
-      <div class="weight-bold-text">出品情報</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          配送料の負担
+      <div class="weight-bold-title">■出品情報</div>
+      <div class="record-info">
+      <div class="weight-bold-text">配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:delivery_charge_id, [], :id, :name, {}, {class:"select-box", id:"collection-shipping-fee-status"}) %>
-        <div class="weight-bold-text">
-          発送元の地域
+        <%= f.collection_select(:delivery_charge_id, DeliveryCharge.all, :id, :name, {}, {class:"select-box", id:"collection-shipping-fee-status"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:prefecture_id, [], :id, :name, {}, {class:"select-box", id:"collection-prefecture"}) %>
-        <div class="weight-bold-text">
-          発送までの日数
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"collection-prefecture"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <% f.collection_select(:delivery_day_id, [], :id, :name, {}, {class:"select-box", id:"collection-schedule-delivery"}) %>
+        <%= f.collection_select(:delivery_day_id, DeliveryDay.all, :id, :name, {}, {class:"select-box", id:"collection-schedule-delivery"}) %>
+      </div>
     </div>
     <%# /出品情報 %>
 
     <%# 販売価格 %>
     <div class="sell-price">
-      <div class="weight-bold-text">販売価格</div>
+      <div class="weight-bold-text">■販売価格</div>
       <div>
         <div class="price-content">
           <div class="price-text">
@@ -141,7 +141,8 @@
     <%# /販売価格 %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%= f.submit "投稿する", class:"post-btn" %>
+      <%= f.submit "出品する", class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
