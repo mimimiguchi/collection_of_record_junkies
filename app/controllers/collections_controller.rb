@@ -1,4 +1,6 @@
 class CollectionsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @collections = Collection.order("created_at DESC")
   end
@@ -14,6 +16,9 @@ class CollectionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
 
