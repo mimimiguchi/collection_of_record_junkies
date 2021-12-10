@@ -21,6 +21,10 @@ class CollectionsController < ApplicationController
   def show
   end
 
+  def search
+    @collections = Collection.search(params[:keyword])
+  end
+
 
   private
 

@@ -1,25 +1,6 @@
 <%= render "layouts/header" %>
 
 <div class='main'>
-<%# 画面上部の帯部分%>
-<div class='title-contents'>
-  <h2 class='service-title'>
-    Collection of Record Junkies
-  </h2>
-  <p class='service-explain'>
-    お持ちのレーコードを管理できる
-  </p>
-  <p class='service-explain'>
-    他のユーザーのcollectionを閲覧・購入できる
-  </p>
-  <p class='service-explain'>
-    自分のまだ知らない音楽に出会える
-  </p>
-  <p class='service-explain'>
-    あなたもレコード管理初めてみませんか？
-  </p>
-</div>
-<%# /画面上部の帯部分%>
 
 <%# collection一覧%>
 <div class='collection-contents'>
@@ -44,30 +25,15 @@
           <div><%= collection.status.name %></div>
         </div>
         <h3 class='title-arist'>
-          <%= collection.title %> <br/>/ <%= collection.artist %>
+          <%= collection.title %><br/> / <%= collection.artist %>
         </h3>
       </div>
       <% end%>
     </li>
-  <% end %>
-  
+    <% end %>
   <% else %>
-    <li class='lists'>
-      <%= link_to "/" do %>
-      <%= image_tag '/images/record.jpg', class: "collection-img"%>
-      <div class='collection-info'>
-        <div class='music-status'>
-          <span>ジャンル</span>
-          <span>管理状態</span>
-        </div>
-        <h3 class='title-arist'>
-          タイトル<br/>/アーティスト
-        </h3>
-      </div>
-      <% end%>
-    </li>
+    <h2>該当するcollectionはありません。</h2>
   <% end %>
-
 </ul>
 </div>
 <%# /collection一覧%>
