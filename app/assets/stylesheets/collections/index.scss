@@ -26,3 +26,58 @@
 }
 
 /* //画面上部の帯部分 */
+
+/* コレクション一覧 */
+a {
+  text-decoration: none;
+}
+
+.collection-contents {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.collection-contents>.title {
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 5vh;
+}
+
+.collection-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.collection-lists>.list {
+  width: 50vw;
+  padding: 1vw;
+  background-color: white;
+}
+
+
+.collection-img-content {
+  position: relative;
+}
+
+.collection-img {
+  height: 45vh;
+}
+
+.collection-info {
+  background-color: #FFF;
+  color: black;
+  margin-bottom: 8vh;
+}
+
+.music-status {
+  font-size: 5px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
