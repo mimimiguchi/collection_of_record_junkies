@@ -36,4 +36,12 @@ class Collection < ApplicationRecord
     status_id == 3
   end
 
+  def self.search(search)
+    if search != ""
+      Collection.where('title LIKE(?) OR artist LIKE(?)', "%#{search}%", "%#{search}%")
+    else
+      Collection.all
+    end
+  end
+
 end

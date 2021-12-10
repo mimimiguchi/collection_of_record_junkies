@@ -40,11 +40,43 @@ a {
   padding: 5vh 0;
 }
 
-.collection-contents>.title {
+.collection-contents-head {
+  display: flex;
+  justify-content: space-around;
+}
+
+.collection-contents-head>.title {
   font-size: 3vh;
   line-height: 1.4;
   font-weight: bold;
   margin-bottom: 5vh;
+  margin-right: 3vh;
+}
+
+.search-input {
+  height: 30px;
+  width: 400px;
+  background-color: white;
+  padding-left: 5px;
+  border-radius: 4px;
+  border: solid 1px black;
+}
+
+.search-input:focus {
+  outline: solid 1px black;
+}
+
+.search-btn {
+  height: 30px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  border: solid 1px black;
+}
+
+.search-btn:focus {
+  outline: solid 1px black;
 }
 
 .collection-lists {
@@ -59,7 +91,6 @@ a {
   padding: 1vw;
   background-color: white;
 }
-
 
 .collection-img-content {
   position: relative;
@@ -81,3 +112,5 @@ a {
   margin: auto;
   justify-content: space-between;
 }
+
+/* //コレクション一覧 */
