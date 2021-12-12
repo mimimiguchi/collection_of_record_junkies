@@ -1,0 +1,103 @@
+<%= render "layouts/header" %>
+
+<%# collectionの概要 %>
+<div class="collection-show">
+<%# collectionの概要のサイド %>
+<div class="side-collection-show">
+  <div class="side-collection-show-box">
+    <div class="side-collection-img-content">
+      <%= image_tag @collection.image, class:"side-collection-img"%>
+    </div>
+    <div class="side-collection-postuser">
+      <span class="side-postuser">
+        <span>投稿者:</span>
+        <a href="/users/<%= @collection.user.id %>">
+          <%= @collection.user.nickname %>
+        </a>
+      </span>
+    </div>
+    
+    <% if user_signed_in? && current_user.id == @collection.user_id %>
+      <%= link_to "編集/出品する", "/", method: :get, class: "postuser-btn" %><br/>
+      <%= link_to "削除する", "/", method: :delete, class: "postuser-btn" %>
+    <% elsif user_signed_in? %>
+      <a>欲しい🎵</a>
+    <% end %>
+
+  </div>
+</div>
+<%# /collectionの概要のサイド %>
+
+<%# collectionの概要のメイン %>
+<div class="main-collection-show">
+  <div class="main-collection-show-box">
+    <div class="main-collection-show-head">
+      <h1 class="show-collection-title">
+        <%= @collection.title %>
+      </h1>
+      <h2 class="show-collection-artist">
+        <%= @collection.artist %>
+      </h2>
+    </div>
+    
+    <% if user_signed_in? && current_user.id != @collection.user_id && @collection.status_id == 3 %>
+      <div class="show-collection-sell">
+        <span class="show-price">
+          ¥ <%= @collection.price %> で出品中！
+        </span>
+        <%= link_to "購入画面に進む", "/", class:"show-collection-purchase-btn" %>
+      </div>
+    <% end %>
+
+    <div class="show-collection-spec">
+      <dl class="show-collection-spec__dl">
+          <dt class="show-collection-spec__dt">ジャンル</dt>
+          <dd class="show-collection-spec__dd"><%= @collection.music.name %></dd>
+          <dt class="show-collection-spec__dt">リリース年</dt>
+          <dd class="show-collection-spec__dd">
+            <% if @collection.year != "" %>
+              <%= @collection.year %>
+            <% else %>
+              <span> 未登録 </span>
+            <% end %>
+          </dd>
+      </dl>
+      <dl class="show-collection-spec__dl">
+        <dt class="show-collection-spec__dt">レコードサイズ</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.size.name %></dd>
+        <dt class="show-collection-spec__dt">回転数</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.rpm.name %></dd>
+        <dt class="show-collection-spec__dt">管理状態</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.status.name %></dd>
+      </dl>
+    </div>
+
+    <div class="show-collection-description">
+      <h2 class="show-collection-description-title">曲の説明</h2>
+      <% if @collection.description != "" %>
+        <%= @collection.description %>
+      <% else %>
+        <a>説明文はありません。</a>
+      <% end %>
+    </div>
+
+    <div class="show-collection-sell-info">
+      <h2 class="show-collection-sell-title">出品情報</h2>
+      <dl class="show-collection-sell-info__dl">
+        <dt class="show-collection-spec__dt">配送料の負担</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.delivery_charge.name %></dd>
+        <dt class="show-collection-spec__dt">発送元の地域</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.prefecture.name %></dd>
+        <dt class="show-collection-spec__dt">発送までの日数</dt>
+        <dd class="show-collection-spec__dd"><%= @collection.delivery_day.name %></dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<%# /collectionの概要のメイン %>
+
+
+</div>
+<%# /collectionの概要 %>
+
+<%= render "layouts/footer" %>

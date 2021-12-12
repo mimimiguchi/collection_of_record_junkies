@@ -1,0 +1,165 @@
+.collection-show {
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 190px;
+}
+
+.side-collection-show-box {
+  margin-right: 100px;
+}
+
+.side-collection-img {
+  width: 260px;
+  height: 260px;
+}
+
+.side-collection-postuser>.side-postuser span {
+  font-size: 20px;
+  margin-right: 10px;
+  color: darkgrey;
+  font-weight: bold;
+}
+
+.side-collection-postuser>.side-postuser a {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.side-collection-postuser>.side-postuser a {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.side-collection-postuser>.side-postuser a:focus {
+  outline: solid 1px black;
+  border-radius: 4px;
+}
+
+.postuser-btn {
+  font-size: 18px;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.postuser-btn:focus {
+  outline: solid 1px black;
+  border-radius: 2px;
+}
+
+.main-collection-show {
+  width: 700px;
+}
+
+.show-collection-title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.show-collection-artist {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.show-collection-sell {
+  background-color: #eff4f5;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-price {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show-collection-purchase-btn {
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 195px;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 45px;
+  margin-left: 30px;
+}
+
+.show-collection-purchase-btn:focus {
+  outline: solid 2px black;
+}
+
+.show-collection-spec {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.show-collection-spec__dl {
+  position: relative;
+  display: inline-block;
+  width: 334px;
+  border-top: 1px solid #eff4f5;
+  border-bottom: 1px solid #eff4f5;
+  margin-right: 29px;
+  padding: 2px 0;
+}
+
+.show-collection-spec__dt {
+  display: inline-block;
+  font-size: 13px;
+  width: 40%;
+  padding: 9px 10px;
+  font-weight: bold;
+}
+
+.show-collection-spec__dd {
+  display: inline-block;
+  width: 50%;
+  font-size: 13px;
+  padding: 9px 10px;
+}
+
+.show-collection-description {
+  margin-top: 60px;
+}
+
+.show-collection-description-title {
+  font-size: 17px;
+  font-weight: 700;
+  padding-top: 10px;
+  margin-top: 5px;
+  border-top: 3px solid black;
+}
+
+.show-collection-description a {
+  font-size: 14px;
+}
+
+.show-collection-sell-info {
+  margin-top: 60px;
+}
+
+.show-collection-sell-title {
+  font-size: 17px;
+  font-weight: 700;
+  padding-top: 10px;
+  margin-top: 5px;
+  border-top: 3px solid black;
+}
+
+.show-collection-sell-info__dl {
+  position: relative;
+  display: inline-block;
+  width: 334px;
+  border-top: 1px solid #eff4f5;
+  border-bottom: 1px solid #eff4f5;
+  margin-top: 10px;
+  margin-right: 29px;
+  padding: 2px 0;
+}
