@@ -80,7 +80,8 @@
         <a>説明文はありません。</a>
       <% end %>
     </div>
-
+    
+    <% if @collection.status_id == 3%>
     <div class="show-collection-sell-info">
       <h2 class="show-collection-sell-title">出品情報</h2>
       <dl class="show-collection-sell-info__dl">
@@ -92,6 +93,7 @@
         <dd class="show-collection-spec__dd"><%= @collection.delivery_day.name %></dd>
       </dl>
     </div>
+    <% end %>
   </div>
 </div>
 <%# /collectionの概要のメイン %>
