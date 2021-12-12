@@ -1,0 +1,155 @@
+<%= render "layouts/second-header" %>
+
+<div class="collections-post-contens">
+  <div class="collections-post-main">
+    <h2 class="collections-post-title">レコードの情報を入力</h2>
+    
+    <%= form_with model: @collection, local: true do |f| %>
+
+    <%= render 'layouts/error_messages', model: f.object %>
+
+    <%# レコード画像 %>
+    <div class="image-upload">
+      <div class="weight-bold-text">
+        レコードのジャケット画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"collection-image", class:"image-field"%>
+      </div>
+    </div>
+    <%# /レコード画像 %>
+
+    <%# ジャンルと曲名とアーティスト名とリリース年と説明%>
+    <div class="new-collections">
+      <div class="record-info">
+      <div class="weight-bold-text">ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:music_id, Music.all, :id, :name, {}, {class:"select-box", id:"collection-music"}) %>
+      </div>
+      <div class="record-info">
+        <div class="weight-bold-text">
+          曲名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class:"input-collection", id:"collection-title", placeholder:"曲名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="record-info">
+        <div class="weight-bold-text">
+          アーティスト名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :artist, class:"input-collection", id:"collection-artist", placeholder:"アーティスト名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="record-info">
+        <div class="weight-bold-text">
+          リリース年
+          <span class="free-will">任意</span>
+        </div>
+        <%= f.text_area :year, class:"input-collection", id:"collection-year", placeholder:"例) 1995（任意 半角数字4文字まで)", maxlength:"4" %>
+      </div>
+      <div class="collections-explain">
+        <div class="weight-bold-text">
+          曲の説明
+          <span class="free-will">任意</span>
+        </div>
+        <%= f.text_area :description, class:"collections-text", id:"collection-explain", placeholder:"曲の説明やご自身の思い出等、自由にご入力ください（任意 1000文字まで)", rows:"7", maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /ジャンルと曲名とアーティスト名とリリース年と説明%>
+    
+    <%# collectionの詳細 %>
+    <div class="new-collections">
+      <div class="weight-bold-title">■collectionの詳細</div>
+      <div class="record-info">
+      <div class="weight-bold-text">レコードサイズ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"collection-size"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">回転数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:rpm_id, Rpm.all, :id, :name, {}, {class:"select-box", id:"collection-rpm"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">管理状態
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"collection-status"}) %>
+      </div>
+    </div>
+    <%# collectionの詳細 %>
+
+    <%# 出品情報 %>
+    <div class="sell-info-form" id="sell-info-form">
+    <div class="sell-info">
+      <div class="weight-bold-title"><p>■出品情報</p></div>
+      <div class="record-info">
+      <div class="weight-bold-text">配送料の負担
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:delivery_charge_id, DeliveryCharge.all, :id, :name, {}, {class:"select-box", id:"collection-shipping-fee-status"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">発送元の地域
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"collection-prefecture"}) %>
+      </div>
+      <div class="record-info">
+      <div class="weight-bold-text">発送までの日数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:delivery_day_id, DeliveryDay.all, :id, :name, {}, {class:"select-box", id:"collection-schedule-delivery"}) %>
+      </div>
+    </div>
+    </div>
+    <%# /出品情報 %>
+
+    <%# 販売価格 %>
+    <div class="sell-price-form" id='sell-price-form'>
+    <div class="sell-price">
+      <div class="weight-bold-title">■販売価格</div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"collection-price", placeholder:"例）1000" %>
+        </div>
+        <div class="price-content">
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div>
+        <div class="price-content">
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+          </span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <%# /販売価格 %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "変更する", class:"post-btn", id:"post-btn" %>
+      <%= f.submit "出品する", class:"sell-btn", id:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "layouts/second-footer" %>
