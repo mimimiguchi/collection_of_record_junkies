@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_collection, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:edit]
+  before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @collections = Collection.order("created_at DESC")
@@ -34,6 +34,11 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @collection.destroy
+    redirect_to root_path
+  end
+
   def search
     @collections = Collection.search(params[:keyword])
   end
@@ -54,5 +59,5 @@ class CollectionsController < ApplicationController
       redirect_to action: :index
     end
   end
-  
+
 end
