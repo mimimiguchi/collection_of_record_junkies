@@ -40,7 +40,7 @@ class CollectionsController < ApplicationController
   end
 
   def search
-    @collections = Collection.search(params[:keyword])
+    @collections = Collection.search(params[:keyword]).order("created_at DESC")
   end
 
 

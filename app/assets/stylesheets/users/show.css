@@ -1,0 +1,18 @@
+/* ユーザーのcollection情報 */
+.my-collection-contents {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 150px;
+  margin-top: 30px;
+}
+
+.my-collection-nickname {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.my-collection-lists {
+  margin-right: 550px;
+}
+/* /ユーザーのcollection情報 */

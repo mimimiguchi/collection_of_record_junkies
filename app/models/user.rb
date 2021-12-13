@@ -22,4 +22,12 @@ class User < ApplicationRecord
 
   validates :birthday, presence: true
 
+  def self.search(search)
+    if search != ""
+      Collection.where('title LIKE(?) OR artist LIKE(?)', "%#{search}%", "%#{search}%")
+    else
+      Collection.all
+    end
+  end
+  
 end

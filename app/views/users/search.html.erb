@@ -1,0 +1,43 @@
+<%= render "layouts/header" %>
+
+<%# ユーザーのcollection一覧%>
+<div class='collection-contents'>
+<div class='collection-contents-head'>
+  <h2 class='title'>collection検索</h2>
+  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "曲名やアーティスト名で検索", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
+<ul class='collection-lists'>
+  <% if @collections[0] != nil %>
+    <% @collections.each do |collection| %>
+    <li class='lists'>
+      <%= link_to collection_path(collection.id) do %>
+      <div class='collection-img-content'>
+        <%= image_tag collection.image, class: "collection-img"%>
+      </div> 
+      <div class='collection-info'>
+        <div class='music-status'>
+          <div><%= collection.music.name %></div>
+          <div><%= collection.status.name %></div>
+        </div>
+        <h3 class='title-arist'>
+          <%= collection.title %> <br/>/ <%= collection.artist %>
+        </h3>
+      </div>
+      <% end%>
+    </li>
+  <% end %>
+
+  <% else %>
+    <div class="collection-empty">
+      <span>投稿されたcollectionはありません。</span>
+    </div>
+  <% end %>
+
+</ul>
+</div>
+<%# /ユーザーのcollection一覧%>
+
+<%= render "layouts/footer" %>

@@ -1,0 +1,71 @@
+<%= render "layouts/header" %>
+
+<%# ユーザーのcollection情報%>
+<div class="my-collection-contents">
+  <div class="my-collection-nickname">
+    <p><%= @nickname %>さんのcollection一覧</p>
+  </div>
+  <% if user_signed_in? && current_user.id == @user.id %>
+    <div class="my-collection-lists">
+      <div class="my-collection-lists-now">
+        <span class="my-collection-now">
+          現在、投稿されているcollectionは <%= @count_now %> 枚
+        </span><br/>
+        <span class="my-collection-now">
+          現在、出品されているcollectionは <%= @count_sell %> 枚
+        </span><br/>
+        <span class="my-collection-now">
+          total collectionは <%= @count_total %> 枚
+        </span>
+      </div>
+      <div class="my-collection-lists-past">
+        <%# 売却済みのcollection枚数表示予定 %>
+      </div>
+    </div>
+    
+  <% end %>
+</div>
+
+<%# /ユーザーのcollection情報%>
+
+<%# ユーザーのcollection一覧%>
+<div class='collection-contents'>
+<div class='collection-contents-head'>
+  <h2 class='title'>collection検索</h2>
+  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "曲名やアーティスト名で検索", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
+<ul class='collection-lists'>
+  <% if @collections[0] != nil %>
+    <% @collections.each do |collection| %>
+    <li class='lists'>
+      <%= link_to collection_path(collection.id) do %>
+      <div class='collection-img-content'>
+        <%= image_tag collection.image, class: "collection-img"%>
+      </div> 
+      <div class='collection-info'>
+        <div class='music-status'>
+          <div><%= collection.music.name %></div>
+          <div><%= collection.status.name %></div>
+        </div>
+        <h3 class='title-arist'>
+          <%= collection.title %> <br/>/ <%= collection.artist %>
+        </h3>
+      </div>
+      <% end%>
+    </li>
+  <% end %>
+
+  <% else %>
+    <div class="collection-empty">
+      <span>投稿されたcollectionはありません。</span>
+    </div>
+  <% end %>
+
+</ul>
+</div>
+<%# /ユーザーのcollection一覧%>
+
+<%= render "layouts/footer" %>
