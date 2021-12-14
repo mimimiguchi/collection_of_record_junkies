@@ -1,0 +1,27 @@
+.want-delete {
+  background-color: black;
+  width: 35%;
+  padding: 2px 0 1px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.delete-font {
+  color: white;
+  font-weight: bold;
+}
+
+.want-post {
+  background-color: white;
+  width: 35%;
+  padding: 2px 0 1px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.post-font {
+  color: black;
+  font-weight: bold;
+}

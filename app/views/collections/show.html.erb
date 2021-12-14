@@ -20,6 +20,7 @@
     <% if user_signed_in? && current_user.id == @collection.user_id %>
       <%= link_to "編集/出品する", edit_collection_path, method: :get, class: "postuser-btn" %><br/>
       <%= link_to "削除する", collection_path(@collection), method: :delete, class: "postuser-btn" %>
+      <p class="want-count">現在、<%= @collection.wants.count %>人が欲しがっています</p>
     <% elsif user_signed_in? %>
       <div id="want_area_<%= @collection.id %>", class="want-area">
         <%= render partial: "wants/want", locals: { collection: @collection } %>

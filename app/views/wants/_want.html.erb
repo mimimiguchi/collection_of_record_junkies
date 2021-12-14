@@ -1,10 +1,14 @@
 <% if current_user.already_wanted?(collection) %>
   <%= link_to collection_wants_path(collection), method: :delete, class: "want-link", remote: true do %>
-    <i class="fas fa-record-vinyl"></i>
+    <div class="want-delete">
+      <p class="delete-font">want <i class="fas fa-record-vinyl fa-lg" style="color:white;"></i></p>
+    </div>
   <% end %>
 <% else %>
   <%= link_to collection_wants_path(collection), method: :post, class: "want-link", remote: true do %>
-    <i class="fas fa-record-vinyl"></i>
+    <div class="want-post">
+      <p class="post-font">want <i class="fas fa-record-vinyl fa-lg" style="color:black;"></i></p>
+    </div>
   <% end %>
 <% end %>
-<p class="want-count"><%= collection.wants.count %></p>
+<p class="want-count">現在、<%= collection.wants.count %>人が欲しがっています</p>

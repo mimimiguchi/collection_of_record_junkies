@@ -10,7 +10,10 @@
           <ul class="user__info" id="pulldown">
             <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "my-page", id: "my-page" %></li>
             <li><%= link_to "collection投稿/出品", new_collection_path, class: "post", id: "post" %></li>
-            <li><%= link_to "欲しい🎵リスト", "/", class: "my-wants", id: "my-wants" %></li>
+            <li><%= link_to root_path do %>
+                   <p class="my-wants" id="my-wants">want <i class="fas fa-record-vinyl" id="icon" style="color:white;"></i> リスト</p>
+                <% end %>
+            </li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout", id: "logout" %></li>
           </ul>
         </span>

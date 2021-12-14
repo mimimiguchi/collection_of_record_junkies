@@ -4,6 +4,7 @@
   const pullDownMyPage = document.getElementById("my-page")
   const pullDownPost = document.getElementById("post")
   const pullDownMyWants = document.getElementById("my-wants")
+  const pullDownIcon = document.getElementById("icon")
   const pullDownLogout = document.getElementById("logout")
   
   pullDownButton.addEventListener('mouseover', function(){
@@ -40,6 +41,13 @@
     this.setAttribute("style", "color:red;")
   })
   pullDownMyWants.addEventListener('mouseout', function(){
+    this.removeAttribute("style", "color:red;")
+  })
+
+  pullDownIcon.addEventListener('mouseover', function(){
+    this.setAttribute("style", "color:red;")
+  })
+  pullDownIcon.addEventListener('mouseout', function(){
     this.removeAttribute("style", "color:red;")
   })
 
