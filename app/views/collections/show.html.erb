@@ -21,7 +21,9 @@
       <%= link_to "編集/出品する", edit_collection_path, method: :get, class: "postuser-btn" %><br/>
       <%= link_to "削除する", collection_path(@collection), method: :delete, class: "postuser-btn" %>
     <% elsif user_signed_in? %>
-      <a>欲しい🎵</a>
+      <div id="want_area_<%= @collection.id %>", class="want-area">
+        <%= render partial: "wants/want", locals: { collection: @collection } %>
+      </div>
     <% end %>
 
   </div>

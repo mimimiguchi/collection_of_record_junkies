@@ -1,0 +1,10 @@
+<% if current_user.already_wanted?(collection) %>
+  <%= link_to collection_wants_path(collection), method: :delete, class: "want-link", remote: true do %>
+    <i class="fas fa-record-vinyl"></i>
+  <% end %>
+<% else %>
+  <%= link_to collection_wants_path(collection), method: :post, class: "want-link", remote: true do %>
+    <i class="fas fa-record-vinyl"></i>
+  <% end %>
+<% end %>
+<p class="want-count"><%= collection.wants.count %></p>

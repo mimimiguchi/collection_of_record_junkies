@@ -10,6 +10,7 @@ require("channels")
 require("../index")
 require("../price")
 require("../sell")
+require("../jquery-3.6.0.min.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

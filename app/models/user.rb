@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :collections
+  has_many :wants, dependent: :destroy
 
-
+  
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
   validates :nickname, presence: true
 
@@ -28,6 +29,10 @@ class User < ApplicationRecord
     else
       Collection.all
     end
+  end
+
+  def already_wanted?(collection)
+    self.wants.exists?(collection_id: collection.id)
   end
   
 end

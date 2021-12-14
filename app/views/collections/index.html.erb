@@ -30,6 +30,7 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
 </div>
+
 <ul class='collection-lists'>
   <% if @collections[0] != nil %>
     <% @collections.each do |collection| %>
@@ -67,7 +68,7 @@
       <% end%>
     </li>
   <% end %>
-
+  
 </ul>
 </div>
 <%# /collection一覧%>
