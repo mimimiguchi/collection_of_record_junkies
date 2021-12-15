@@ -17,7 +17,6 @@
 - has_many :collections
 - has_many :purchases
 - has_many :wants
-- has_many :pasts
 
 
 ## collectionsテーブル
@@ -42,7 +41,6 @@
 - belongs_to :user
 - has_many :wants
 - has_one :purchase
-- has_one :past
 
 
 ## wantsテーブル
@@ -68,7 +66,6 @@
 - belongs_to :user
 - belongs_to :collection
 - has_one :address
-- has_one :past
 
 
 ## addressesテーブル
@@ -84,18 +81,4 @@
 | purchase      | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :purchase
-
-
-## pastsテーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| collection    | references | null: false, foreign_key: true |
-| purchase      | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :collection
 - belongs_to :purchase
