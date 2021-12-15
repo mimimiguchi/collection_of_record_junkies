@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def move_to_index
-    @user = User.find(params[:id])
     unless user_signed_in? && current_user.id == @user.id
       redirect_to wants_user_path(current_user.id)
     end
