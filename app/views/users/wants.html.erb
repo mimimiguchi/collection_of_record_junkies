@@ -1,0 +1,40 @@
+<%= render "layouts/header" %>
+
+<div class="result-contents">
+  <div class="result-text">
+    <p><%= @nickname %>さんの want <i class="fas fa-record-vinyl" style="color:black;"></i> 一覧</p>
+  </div>
+</div>
+
+<div class='collection-contents'>
+<ul class='collection-lists'>
+  <% if @collections[0] != nil %>
+    <% @collections.each do |collection| %>
+    <li class='lists'>
+      <%= link_to collection_path(collection.id) do %>
+      <div class='collection-img-content'>
+        <%= image_tag collection.image, class: "collection-img"%>
+      </div> 
+      <div class='collection-info'>
+        <div class='music-status'>
+          <div><%= collection.music.name %></div>
+          <div><%= collection.status.name %></div>
+        </div>
+        <h3 class='title-arist'>
+          <%= collection.title %> <br/>/ <%= collection.artist %>
+        </h3>
+      </div>
+      <% end%>
+    </li>
+  <% end %>
+
+  <% else %>
+    <div class="collection-empty">
+      <span>現在、want <i class="fas fa-record-vinyl" style="color:black;"></i> はありません。</span>
+    </div>
+  <% end %>
+
+</ul>
+</div>
+
+<%= render "layouts/footer" %>

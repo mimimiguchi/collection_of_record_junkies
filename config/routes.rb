@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     member do
       get 'search'
+      get 'wants'
     end
   end
   
