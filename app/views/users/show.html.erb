@@ -32,7 +32,7 @@
 <div class='collection-contents'>
 <div class='collection-contents-head'>
   <h2 class='title'>collection検索</h2>
-  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form_with(url: search_user_path, local: true, method: :get, class: "search-form") do |form| %>
     <%= form.text_field :keyword, placeholder: "曲名やアーティスト名で検索", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
