@@ -44,7 +44,11 @@
       <div class='collection-info'>
         <div class='music-status'>
           <div><%= collection.music.name %></div>
-          <div><%= collection.status.name %></div>
+          <% if collection.purchase.present? %>
+            <span>売却済</span>
+          <% else %>
+            <div><%= collection.status.name %></div>
+          <% end %>
         </div>
         <h3 class='title-arist'>
           <%= collection.title %> <br/>/ <%= collection.artist %>

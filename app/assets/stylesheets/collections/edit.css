@@ -1,0 +1,9 @@
+.sold-out {
+  height: 30px;
+  width: 70%;
+  background-color: #aaa;
+  color: white;
+  padding-left: 20px;
+  padding-top: 4px;
+  border-radius: 4px;
+}

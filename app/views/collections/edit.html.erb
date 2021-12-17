@@ -66,26 +66,34 @@
     <div class="new-collections">
       <div class="weight-bold-title">■collectionの詳細</div>
       <div class="record-info">
-      <div class="weight-bold-text">レコードサイズ
+        <div class="weight-bold-text">レコードサイズ
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"collection-size"}) %>
       </div>
       <div class="record-info">
-      <div class="weight-bold-text">回転数
+        <div class="weight-bold-text">回転数
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:rpm_id, Rpm.all, :id, :name, {}, {class:"select-box", id:"collection-rpm"}) %>
       </div>
+      <% if @collection.purchase.present? %>
       <div class="record-info">
-      <div class="weight-bold-text">管理状態
+        <div class="weight-bold-text">管理状態</div>
+        <span class="sold-out">売却済</span>
+      </div>
+      <% else %>
+      <div class="record-info">
+        <div class="weight-bold-text">管理状態
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"collection-status"}) %>
       </div>
+      <% end %>
     </div>
     <%# collectionの詳細 %>
-
+    
+    <% unless @collection.purchase.present? %>
     <%# 出品情報 %>
     <div class="sell-info-form" id="sell-info-form">
     <div class="sell-info">
@@ -141,10 +149,13 @@
     </div>
     </div>
     <%# /販売価格 %>
+    <% end %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する", class:"post-btn", id:"post-btn" %>
+      <% unless @collection.purchase.present? %>
       <%= f.submit "出品する", class:"sell-btn", id:"sell-btn" %>
+      <% end %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>

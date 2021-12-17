@@ -20,7 +20,7 @@
     <% if user_signed_in? && current_user.id == @collection.user_id %>
       <%= link_to "編集/出品する", edit_collection_path, method: :get, class: "postuser-btn" %><br/>
       <%= link_to "削除する", collection_path(@collection), method: :delete, class: "postuser-btn" %>
-      <p class="want-count">現在、<%= @collection.wants.count %>人が欲しがっています</p>
+      <p class="want-count">現在の want<i class="fas fa-record-vinyl" style="color:black;"></i> 人数：   <%= @collection.wants.count %>人</p>
     <% elsif user_signed_in? %>
       <div id="want_area_<%= @collection.id %>", class="want-area">
         <%= render partial: "wants/want", locals: { collection: @collection } %>
@@ -45,10 +45,16 @@
     
     <% if user_signed_in? && current_user.id != @collection.user_id && @collection.status_id == 3 %>
       <div class="show-collection-sell">
-        <span class="show-price">
-          ¥ <%= @collection.price %> で出品中！
-        </span>
-        <%= link_to "購入画面に進む", "/", class:"show-collection-purchase-btn" %>
+        <% if @collection.purchase.present? %>
+          <span class="show-price">
+            ¥ <%= @collection.price %> で売却済み！
+          </span>
+        <% else %>
+          <span class="show-price">
+            ¥ <%= @collection.price %> で出品中！
+          </span>
+          <%= link_to "購入画面に進む", collection_purchases_path(@collection.id), class:"show-collection-purchase-btn" %>
+        <% end %>
       </div>
     <% end %>
 
@@ -71,7 +77,11 @@
         <dt class="show-collection-spec__dt">回転数</dt>
         <dd class="show-collection-spec__dd"><%= @collection.rpm.name %></dd>
         <dt class="show-collection-spec__dt">管理状態</dt>
-        <dd class="show-collection-spec__dd"><%= @collection.status.name %></dd>
+        <% if @collection.purchase.present? %>
+          <dd class="show-collection-spec__dd">売却済</dd>
+        <% else %>
+          <dd class="show-collection-spec__dd"><%= @collection.status.name %></dd>
+        <% end %>
       </dl>
     </div>
 

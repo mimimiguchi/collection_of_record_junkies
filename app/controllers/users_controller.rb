@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, onlyt: [:wants]
   before_action :set_user, only: [:show, :search, :wants]
   before_action :set_nickname, only: [:show, :search, :wants]
-  before_action :move_to_index, only: [:wants]
+  before_action :move_to_want, only: [:wants]
 
   def show
     @collections = @user.collections
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @nickname = @user.nickname
   end
 
-  def move_to_index
+  def move_to_want
     unless user_signed_in? && current_user.id == @user.id
       redirect_to wants_user_path(current_user.id)
     end

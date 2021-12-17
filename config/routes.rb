@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   resources :collections do
     resource :wants, only: [:create, :destroy]
+    resources :purchases, only: [:index, :create]
 
     collection do
       get 'search'
