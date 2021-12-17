@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get 'search'
       get 'wants'
+      get 'post'
+      get 'sell'
+      get 'past'
     end
   end
   

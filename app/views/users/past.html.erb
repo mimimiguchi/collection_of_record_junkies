@@ -3,21 +3,15 @@
 <%# ユーザーのcollection情報%>
 <div class="my-collection-contents">
   <div class="my-collection-nickname">
-    <p><%= @nickname %>さんの<span class="my-collection-title">全collection</span>一覧</p>
+    <p><%= @nickname %>さんの<span class="my-collection-title">売却済collection</span>一覧</p>
   </div>
   <%= render "layouts/my-collection-info" %>
 </div>
+
 <%# /ユーザーのcollection情報%>
 
 <%# ユーザーのcollection一覧%>
 <div class='collection-contents'>
-<div class='collection-contents-head'>
-  <h2 class='title'>collection検索</h2>
-  <%= form_with(url: search_user_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "曲名やアーティスト名で検索", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
-  <% end %>
-</div>
 <ul class='collection-lists'>
   <% if @collections[0] != nil %>
     <% @collections.each do |collection| %>
@@ -29,11 +23,7 @@
       <div class='collection-info'>
         <div class='music-status'>
           <div><%= collection.music.name %></div>
-          <% if collection.purchase.present? %>
-            <span>売却済</span>
-          <% else %>
-           <div><%= collection.status.name %></div>
-          <% end %>
+          <div><%= collection.status.name %></div>
         </div>
         <h3 class='title-arist'>
           <%= collection.title %> <br/>/ <%= collection.artist %>
@@ -45,7 +35,7 @@
 
   <% else %>
     <div class="collection-empty">
-      <span>投稿されたcollectionはありません。</span>
+      <span>売却されたcollectionはありません。</span>
     </div>
   <% end %>
 

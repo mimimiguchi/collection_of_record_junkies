@@ -1,0 +1,49 @@
+<% if user_signed_in? && current_user.id == @user.id %>
+    <div class="my-collection-lists">
+        <div class="my-collection-detail">
+          <div class="my-collection-detail-text">
+            <span>現在、投稿されているcollection</span>
+          </div>
+          <div class="my-collection-detail-text"><span class="count-result">
+            <%= @count_now %>枚</span>
+          </div>
+          <%= link_to post_user_path(current_user.id), class: "check-btn" do %>
+             <i class="fas fa-search " style="color:#ea352d;"></i>
+          <% end %>
+        </div>
+        <div class="my-collection-detail">
+          <div class="my-collection-detail-text">
+            <span>現在、出品されているcollection</span>
+          </div>
+          <div class="my-collection-detail-text"><span class="count-result">
+            <%= @count_sell - @count_sold_out %>枚</span>
+          </div>
+          <%= link_to sell_user_path(current_user.id), class: "check-btn" do %>
+             <i class="fas fa-search " style="color:#ea352d;"></i>
+          <% end %>
+        </div>
+        <div class="my-collection-detail">
+          <div class="my-collection-detail-text">
+            <span>これまでに売却した collection</span>
+          </div>
+          <div class="my-collection-detail-text">
+            <span class="count-sold-out-result"><%= @count_sold_out %>枚</span>
+          </div>
+          <%= link_to past_user_path(current_user.id), class: "check-btn" do %>
+             <i class="fas fa-search " style="color:#ea352d;"></i>
+          <% end %>
+        </div>
+        <div class="my-collection-detail">
+          <div class="my-collection-detail-text">
+            <span>現在のtotal collection</span>
+          </div>
+          <div class="my-collection-detail-text">
+            <span class="count-total-result"><%= @count_total %>枚</span>
+          </div>
+          <%= link_to "/users/#{current_user.id}", class: "check-btn" do %>
+             <i class="fas fa-search " style="color:#ea352d;"></i>
+          <% end %>
+          </div>
+        </div>
+    </div> 
+  <% end %>
