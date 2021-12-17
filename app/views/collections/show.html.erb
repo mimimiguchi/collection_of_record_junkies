@@ -18,8 +18,16 @@
     </div>
     
     <% if user_signed_in? && current_user.id == @collection.user_id %>
-      <%= link_to "編集/出品する", edit_collection_path, method: :get, class: "postuser-btn" %><br/>
-      <%= link_to "削除する", collection_path(@collection), method: :delete, class: "postuser-btn" %>
+      <div class="edit-destroy-contents">
+        <%= link_to edit_collection_path, method: :get, class: "postuser-btn" do %>
+          <span class="edit-destroy-btn">編集/出品</span>
+        <% end %>
+      </div>
+      <div class="edit-destroy-contents">
+        <%= link_to collection_path(@collection), method: :delete, class: "postuser-btn" do %>
+        <span class="edit-destroy-btn">削除</span>
+        <% end %>
+      </div>
       <p class="want-count">現在の want<i class="fas fa-record-vinyl" style="color:black;"></i> 人数：   <%= @collection.wants.count %>人</p>
     <% elsif user_signed_in? %>
       <div id="want_area_<%= @collection.id %>", class="want-area">
