@@ -2,7 +2,6 @@
 .my-collection-contents {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   padding: 0 150px;
   margin-top: 25px;
 }
@@ -10,17 +9,17 @@
 .my-collection-nickname {
   font-size: 18px;
   font-weight: bold;
+  margin-right: 90px;
+  width: 30%;
 }
 
-.my-collection-lists {
-  margin-right: 450px;
-}
 
 .my-collection-detail {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
+
 
 .count-result {
   font-weight: bold;
