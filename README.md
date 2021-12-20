@@ -1,5 +1,3 @@
-# README
-
 # アプリケーション名
 Collection of Record Junkies
 
