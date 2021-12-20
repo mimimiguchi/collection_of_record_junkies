@@ -14,24 +14,8 @@
 <div class='collection-contents'>
 <ul class='collection-lists'>
   <% if @collections[0] != nil %>
-    <% @collections.each do |collection| %>
-    <li class='lists'>
-      <%= link_to collection_path(collection.id) do %>
-      <div class='collection-img-content'>
-        <%= image_tag collection.image, class: "collection-img"%>
-      </div> 
-      <div class='collection-info'>
-        <div class='music-status'>
-          <div><%= collection.music.name %></div>
-          <div><span>売却済</span></div>
-        </div>
-        <h3 class='title-arist'>
-          <%= collection.title %> <br/>/ <%= collection.artist %>
-        </h3>
-      </div>
-      <% end%>
-    </li>
-  <% end %>
+  
+  <%= render "layouts/display" %>
 
   <% else %>
     <div class="collection-empty">
