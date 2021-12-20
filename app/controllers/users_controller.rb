@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @collections = Collection.where(user_id: @user.id).search(params[:keyword])
+    @collections = Collection.where(user_id: @user.id).order(created_at: "DESC").search(params[:keyword])
   end
 
   def wants
