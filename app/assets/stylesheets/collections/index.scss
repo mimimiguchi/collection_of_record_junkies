@@ -32,6 +32,43 @@ a {
   text-decoration: none;
 }
 
+/* ページネーション */
+
+.pagination {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.pagination li+ li {
+  border-left: 1px solid #333;
+}
+
+.page-link {
+  padding: 3px 10px;
+}
+
+.pagination .disabled  {
+  color: gray;
+}
+
+.pagination .active {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination a {
+  color: black;
+}
+
+/* //ページネーション */
+
+
 .collection-contents {
   background-color: white;
   display: flex;

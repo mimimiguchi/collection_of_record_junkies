@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @collections = Collection.order("created_at DESC")
+    @collections = Collection.order("created_at DESC").paginate(page: params[:page], per_page: 20)
   end
 
   def new
