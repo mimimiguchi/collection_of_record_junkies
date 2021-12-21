@@ -13,7 +13,6 @@
 
 .crj-icon {
   width: 15vw;
-  margin-right: 10vw;
 }
 
 .user_nav span {
@@ -82,4 +81,47 @@
 .sign-up{
   text-decoration: none;
   color: white;
+}
+
+/* スマホ横表示時 */
+@media (max-width: 896px){
+  .top-page-header {
+    padding: 2vh 7vw;
+  }
+  .user__info {
+    width: 130px;
+    height: 120px;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+  }
+  .user__info a {
+    font-size: 13px;
+  }
+  .user__info p {
+    font-size: 13px;
+  }
+}
+
+/* スマホ縦表示時 */
+@media (max-width: 480px){
+  .top-page-header {
+    padding: 1.5vh 13vw;
+  }
+  .user_nav span {
+    font-size: 12px;
+  }
+  .user__info {
+    width: 100px;
+    height: 84px;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+  }
+  .user__info a {
+    font-size: 5px;
+  }
+  .user__info p {
+    font-size: 5px;
+  }
 }
