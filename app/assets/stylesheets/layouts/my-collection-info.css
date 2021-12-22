@@ -2,57 +2,33 @@
 .my-collection-contents {
   width: 100%;
   display: flex;
-  padding: 0 150px;
+  padding-left: 150px;
   margin-top: 25px;
 }
 
 .my-collection-nickname {
   font-size: 18px;
   font-weight: bold;
-  margin-right: 90px;
   width: 30%;
+  margin-right: 40px;
 }
 
-
-.my-collection-detail {
+.my-collection-lists {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+}
+
+.my-collection-detail-contents {
+  width: 250px;
+  margin-right: 10px;
+}
+
+.my-collection-detail-count-text {
+  text-align: right;
+}
+
+.my-collection-detail-count {
+  width: 40px;
+  margin-right: 10px;
 }
 
 
-.count-result {
-  font-weight: bold;
-  color: #ea352d;
-  margin-left: 20px;
-}
-
-.count-sold-out-result {
-  font-weight: bold;
-  color: #ea352d;
-  margin-left: 30px;
-}
-
-.count-total-result {
-  font-weight: bold;
-  color: #ea352d;
-  margin-left: 90px;
-}
-
-.check-btn {
-  margin-left: 5px;
-}
-
-.check-btn:focus {
-  outline: solid 2px black;
-  border-radius: 4px;
-}
-
-/* /ユーザーのcollection情報 */
-
-.my-collection-title {
-  background-color: black;
-  color: white;
-  padding: 5px 6px;
-  border-radius: 4px;
-}
