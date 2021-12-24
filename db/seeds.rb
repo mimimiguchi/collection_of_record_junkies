@@ -1,7 +1,7 @@
 collection = Collection.new(
   music_id: 13,
-  title: "ASTEROID LOVE",
-  artist: "L-universe",
+  title: "Lost sessions",
+  artist: "Pete Rpck",
   year: "",
   description: "",
   size_id: 3,
@@ -13,6 +13,6 @@ collection = Collection.new(
   price: "",
   user_id: 1
 )
-collection.image.attach(io: File.open(Rails.root.join('app/assets/images/IMG_2741.jpg')), filename: 'IMG_2741.jpg')
+collection.image.attach(io: File.open(Rails.root.join('app/assets/images/Pete rock.jpg')), filename: 'Pete rock.jpg')
 collection.save!
 
