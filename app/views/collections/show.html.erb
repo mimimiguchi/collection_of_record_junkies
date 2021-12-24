@@ -24,7 +24,7 @@
         <% end %>
       </div>
       <div class="edit-destroy-contents">
-        <%= link_to collection_path(@collection), method: :delete, class: "postuser-btn" do %>
+        <%= link_to collection_path(@collection.id), method: :delete, class: "postuser-btn" do %>
         <span class="edit-destroy-btn">削除</span>
         <% end %>
       </div>
